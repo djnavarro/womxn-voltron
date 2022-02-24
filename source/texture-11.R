@@ -99,7 +99,7 @@ generate_logotype <- function() {
     x = c(2 + xs, 2 + xs, 4, 4),
     y = c(.5, 1, -.6, -1.1),
     text = c("V O L T R O N   D A T A", "W O M X N    A T", 
-             "T H E   A D A   L O V E L A C E   M E E T I N G", "9   M A R C H   2 0 2 2"),
+             "T H E   A D A   L O V E L A C E   M E E T I N G", "8   M A R C H   2 0 2 2"),
     font = c("archerus"),
     weight = c("bold", "italic", "bold", "italic"),  # ... these are lies!
     size = c(20, 10, 12, 10),
