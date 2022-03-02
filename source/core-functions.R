@@ -166,7 +166,7 @@ generate_logotype <- function(message = "", position = "") {
   iwd_below <- tibble(
     x = c(4, 4),
     y = c(-.6, -1.1),
-    text = c("I N T E R N A T I O N A L   W O M E N S   D A Y", 
+    text = c("I N T E R N A T I O N A L   W O M E N ' S   D A Y", 
              "8   M A R C H   2 0 2 2"),
     font = c("archerus"),
     weight = c("bold", "italic"),  # ...lies!
@@ -179,7 +179,7 @@ generate_logotype <- function(message = "", position = "") {
   iwd_right <- tibble(
     x = c(15, 15),
     y = c(1, .59),
-    text = c("I N T E R N A T I O N A L   W O M E N S   D A Y", 
+    text = c("I N T E R N A T I O N A L   W O M E N ' S   D A Y", 
              "8   M A R C H   2 0 2 2"),
     font = c("archerus"),
     weight = c("italic", "italic"),  # ...lies!
