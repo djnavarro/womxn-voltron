@@ -4,6 +4,9 @@ source(here::here("source/texture-functions.R"))
 
 make_centred_texture <- function(colour, background, seed = 1000) {
 
+  # fix the seed 
+  set.seed(seed)
+  
   # specify plot limits 
   x_limit <- c(-4, 12) # w: 16
   y_limit <- c(-3.5, 4.5) # h: 8
@@ -17,7 +20,7 @@ make_centred_texture <- function(colour, background, seed = 1000) {
   xsh <- 0
   
   # define the logo & text
-  voltron_text <- generate_logotype(lovelace = "below") 
+  voltron_text <- generate_logotype(position = "below", message = "lovelace") 
   logo <- generate_logo() %>% mutate(x = x + .6)
   
   # construct plot

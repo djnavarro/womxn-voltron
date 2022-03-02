@@ -104,7 +104,7 @@ logo_part <- function(part) {
 }
 
 # data needed to specify the logo text
-generate_logotype <- function(lovelace = "none") {
+generate_logotype <- function(message = "", position = "") {
   
   # load fonts
   showtext_auto()
@@ -161,8 +161,40 @@ generate_logotype <- function(lovelace = "none") {
     vjust = c("top", "center")
   )
   
-  if(lovelace == "below") return(bind_rows(logotext, lovelace_below))
-  if(lovelace == "right") return(bind_rows(logotext, lovelace_right))
+  
+  # places IWD underneath the Voltron Data logo
+  iwd_below <- tibble(
+    x = c(4, 4),
+    y = c(-.6, -1.1),
+    text = c("I N T E R N A T I O N A L   W O M E N S   D A Y", 
+             "8   M A R C H   2 0 2 2"),
+    font = c("archerus"),
+    weight = c("bold", "italic"),  # ...lies!
+    size = c(12, 10),
+    hjust = c("middle", "middle"),
+    vjust = c("center", "center")
+  )
+  
+  # places IWD to the right of Voltron Data logo
+  iwd_right <- tibble(
+    x = c(15, 15),
+    y = c(1, .59),
+    text = c("I N T E R N A T I O N A L   W O M E N S   D A Y", 
+             "8   M A R C H   2 0 2 2"),
+    font = c("archerus"),
+    weight = c("italic", "italic"),  # ...lies!
+    size = c(10, 10),
+    hjust = c("right", "right"),
+    vjust = c("top", "center")
+  )
+  
+  
+  
+  
+  if(position == "below" & message == "lovelace") return(bind_rows(logotext, lovelace_below))
+  if(position == "right" & message == "lovelace") return(bind_rows(logotext, lovelace_right))
+  if(position == "below" & message == "iwd") return(bind_rows(logotext, iwd_below))
+  if(position == "right" & message == "iwd") return(bind_rows(logotext, iwd_right))
   return(logotext)
 } 
 

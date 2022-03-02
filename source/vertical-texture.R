@@ -4,6 +4,9 @@ source(here::here("source/texture-functions.R"))
 
 make_vertical_texture <- function(colour, background, seed = 1000) {
 
+  # fix the seed 
+  set.seed(seed)
+  
   # specify plot limits 
   x_limit <- c(-4, 12) # w: 16
   y_limit <- c(-3.5, 4.5) # h: 8
@@ -17,7 +20,7 @@ make_vertical_texture <- function(colour, background, seed = 1000) {
   xsh <- -3.5 
   
   # define the logo & text
-  voltron_text <- generate_logotype(lovelace = "right") 
+  voltron_text <- generate_logotype(message = "lovelace", position = "right") 
   logo <- generate_logo() %>% mutate(x = x + .6)
   
   # construct plot
