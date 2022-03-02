@@ -2,7 +2,7 @@
 source(here::here("source/core-functions.R"))
 source(here::here("source/texture-functions.R"))
 
-make_centred_texture <- function(colour, background, seed = 1000) {
+make_centred_texture_lovelace <- function(colour, background, seed = 1000) {
 
   # fix the seed 
   set.seed(seed)
@@ -97,11 +97,11 @@ for(r in 1:nrow(visual_themes)) {
   col <- visual_themes$colour[r]
   bg <- visual_themes$background[r]
   
-  dir <- here::here("img/centre-texture")
-  fname <- paste0("centre-texture_", col, "-on-", bg, ".png")
+  dir <- here::here("img/centre-texture-lovelace")
+  fname <- paste0("centre-texture-lovelace_", col, "-on-", bg, ".png")
   cat(fname, "\n")
   
-  pic <- make_centred_texture(colour = col, background = bg)
+  pic <- make_centred_texture_lovelace(colour = col, background = bg)
   
   export_logo(
     plot = pic,
